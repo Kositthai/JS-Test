@@ -34,8 +34,9 @@ btn.addEventListener('click', displayJSTestText)
 const asyncFunc = async() => {
     const response = await fetch('https://reqres.in/api/users')
     const data = await response.json()
+    const threeUsers = data.data.slice(0,3)
 
-    data.data.map(element => {
+    threeUsers.map(element => {
         const para = document.createElement('p')
         para.innerHTML = element.first_name; 
         document.body.appendChild(para); 
